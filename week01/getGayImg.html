@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./getGrayImg.js"></script>
+</head>
+<body>
+    <img id="img" />
+    <script>
+      let img= document.getElementById('img')
+      const url= 'https://image.shutterstock.com/display_pic_with_logo/94021/1968272230/stock-photo-football-ball-with-flags-of-european-countries-in-the-net-of-goal-of-football-stadium-euro-1968272230.jpg'
+      getGrayImage(url)
+        .then(imgUrl => {
+          console.log('url---->', imgUrl)
+          img.src= imgUrl
+        })
+    </script>
+</body>
+</html>
