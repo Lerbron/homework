@@ -17,3 +17,10 @@ const handle = (a, b, type) => {
 
 let result = handle(res[1], handle(res[3], handle(res[5], res[7], res[6]), res[4]), res[2])
 console.log('result--->', result)
+
+
+// let reg1= /(\d)(?=(\d{3})+\b)/g
+
+// let c= '12345678901'
+// let d= c.replace(reg1, '$1,')
+// console.log('d----->', d)

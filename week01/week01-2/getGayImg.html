@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,35 @@
   <title>Document</title>
   <script src="./getGrayImg.js"></script>
 </head>
+
 <body>
-    <img id="img" />
-    <script>
-      let img= document.getElementById('img')
-      const url= 'https://image.shutterstock.com/display_pic_with_logo/94021/1968272230/stock-photo-football-ball-with-flags-of-european-countries-in-the-net-of-goal-of-football-stadium-euro-1968272230.jpg'
-      getGrayImage(url)
+  <input id='ipt' type='file' accept="image/*" />
+  <div>
+    <img id="img1" />
+    <img id="img2" />
+
+  </div>
+  <script>
+    let oIpt = document.getElementById('ipt'),
+      oImg1= document.getElementById('img1'),
+      oImg2= document.getElementById('img2')
+
+    oIpt.addEventListener('change', e => {
+      let file = e.target.files[0]
+
+      const reader = new FileReader(file)
+      reader.onload = function (evt) {
+        console.log(evt.target.result);
+        oImg1.src=evt.target.result
+        getGrayImage(evt.target.result)
         .then(imgUrl => {
-          console.log('url---->', imgUrl)
-          img.src= imgUrl
+          img2.src= imgUrl
         })
-    </script>
+      };
+      reader.readAsDataURL(file);
+
+    })
+  </script>
 </body>
+
 </html>
