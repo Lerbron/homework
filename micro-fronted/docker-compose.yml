@@ -1,0 +1,14 @@
+version: "3"
+services:
+  sub-vue:
+    build: ./sub-vue
+    image: sub-vue
+    container_name: sub-vue
+    ports:
+      - 7777:7777
+  main-app:
+    build: ./main
+    image: main-app
+    container_name: main-app
+    ports:
+      - 8080:8080
