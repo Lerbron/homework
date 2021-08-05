@@ -33,12 +33,12 @@ export default {
   methods: {
     getTopicDetail (id) {
       if (!id) return null
-      axios.get(`/api/v1/topic/${id}`)
+      axios.get(`/toutiao/content?key=294b924ec8773fee518de6c90d08250d&uniquekey=${id}`)
         .then(res => {
           console.log('detail000-<', res)
           this.detail = {
             title: res?.data?.data?.title,
-            content: res?.data?.data?.content
+            content: res?.data?.result?.content
           }
         })
     }

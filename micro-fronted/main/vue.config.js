@@ -23,8 +23,8 @@ module.exports = {
       'Access-Control-Allow-Origin': '*'
     },
     proxy: {
-      '/api/': {
-        target: "https://cnodejs.org",
+      '/toutiao/': {
+        target: "http://v.juhe.cn",
         changeOrigin: true
       }
     }

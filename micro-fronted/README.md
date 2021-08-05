@@ -15,3 +15,16 @@ npm i
 npm start
 ```
 通过 [http://localhost:8080/](http://localhost:8080/) 访问主应用。
+
+
+
+## build
+生产环境打包
+```
+yarn build
+```
+
+## docker部署
+```
+docker compose up
+```

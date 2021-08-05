@@ -52,15 +52,15 @@ export default {
   components: {},
   methods: {
     getTopics () {
-      axios.get('/api/v1/topics')
+      axios.get('/toutiao/index?type=top&&key=294b924ec8773fee518de6c90d08250d')
         .then(res => {
           console.log('res---->', res)
-          this.topics = res?.data?.data ?? []
+          this.topics = res?.data?.result?.data ?? []
         })
     },
     goDetail (item) {
       const states = store.getGlobalState()
-      store.setGlobalState({ ...states, topicId: item.id })
+      store.setGlobalState({ ...states, topicId: item.uniquekey })
     },
     goto (item) {
       history.pushState(null, item.activeRule, item.activeRule)
