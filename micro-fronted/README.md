@@ -28,3 +28,5 @@ yarn build
 ```
 docker compose up
 ```
+
+启动成功之后，访问localhost:8080
